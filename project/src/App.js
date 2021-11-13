@@ -10,23 +10,31 @@ function App() {
   const [num, setNum] = useState("");
   const [opt, setOpt] = useState("");
   const [confirmList, setConfirmList] = useState([]);
+  const [count,setCount] = useState(0);
+  const [countwait, setCountwait] = useState(0);
   
   const handleSubmit = (e) => {
     e.preventDefault();
     setWaitList([...waitList, name]);
     setName('');setNum('');setOpt('');
+    setCountwait(countwait => countwait+1);
   };
 
   const handleDelete = (index) =>{
     var newList = waitList;
     newList.splice(index,1);
-    setWaitList([...newList]);
+    setWaitList([...newList])
+    setCountwait(countwait => countwait - 1);
   }
 
   const handleAdd = (e) => {
     e.preventDefault();
-    setConfirmList([...confirmList,waitList]);
+    setConfirmList([...confirmList,...waitList]);
     console.log(confirmList);
+    setWaitList([]);
+    let c = countwait;
+    setCount(count => count + c);
+    setCountwait(0);
   }
 
   return (
@@ -34,9 +42,9 @@ function App() {
     <div className='main'>
       <h1 >Invitation App</h1>
       <form onSubmit={handleSubmit}>
-        <input type='text' placeholder='Enter Name' value={name} onChange={e => setName(e.target.value)} className='inputs' /> 
-        <input type='text' placeholder='Enter Phone Number' value={num} onChange={e => setNum(e.target.value)} className='inputs' />
-        <select className='inputs' value={opt} onChange={e => setOpt(e.target.value)}>
+        <input type='text' placeholder='Enter Name' value={name} onChange={e => setName(e.target.value)} className='inputs' required /> 
+        <input type='text' placeholder='Enter Phone Number' value={num} onChange={e => setNum(e.target.value)} className='inputs' required/>
+        <select className='inputs' value={opt} onChange={e => setOpt(e.target.value)} required>
           <option value="1">VVIP</option>
           <option value="2">VIP</option>
           <option value="3">Special</option>
@@ -49,7 +57,7 @@ function App() {
 
       <div>
       {waitList.length>0 ? 
-        <div className="wait">
+        <div>
         <h2>Wait List</h2>
        {waitList.map((names,index) => 
           <div key={index} className="list1">
@@ -64,24 +72,29 @@ function App() {
           <br />
         </div>
       : 
-      <div>
-        <p>Add people to invite!</p>
-        <br />
-      </div>}
-      
-      {/* <div>
-      {confirmList.length>0 ? 
-        {confirmList.map((names,index)=> (
-        <div key={index} className="list1">
-          {names}
-        </div>)
-        )}
-          :
-          <p>Click on Confirm add to get a list of people coming</p>
-      }
-      </div> */}
+        <div>
+          <p>Add people to invite!</p>
+          <br />
+        </div>}
+      </div>
+        <div>
+          {confirmList.length>0 ? 
+            <div>
+              <h2>Invited List {count}</h2>
+              {confirmList.map((names,index)=>(
+                <div className="list1">
+                  <li key={index}>
+                    {names}
+                  </li>
+              </div>
+              ))}
+            </div>
+            :
+            <div>
+              {/* <p>Click on Confirm add to see the invite list</p> */}
+            </div>
+          }
         </div>
-
       </div>
     )
 }
