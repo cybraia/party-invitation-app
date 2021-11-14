@@ -1,6 +1,8 @@
 import React from 'react';
 import { useState } from 'react';
 import './App.css';
+import {AiFillDelete} from 'react-icons/ai';
+
 
 
 function App() {
@@ -12,10 +14,12 @@ function App() {
   const [confirmList, setConfirmList] = useState([]);
   const [count,setCount] = useState(0);
   const [countwait, setCountwait] = useState(0);
+
   
   const handleSubmit = (e) => {
     e.preventDefault();
-    setWaitList([...waitList, name]);
+    setWaitList([...waitList, {name: name, number: num, options: opt}]);
+    console.log(waitList);
     setName('');setNum('');setOpt('');
     setCountwait(countwait => countwait+1);
   };
@@ -27,10 +31,16 @@ function App() {
     setCountwait(countwait => countwait - 1);
   }
 
+  const handleDelete2 = (index) =>{
+    var newList = confirmList;
+    newList.splice(index,1);
+    setConfirmList([...newList])
+    setCount(count => count - 1);
+  }
+
   const handleAdd = (e) => {
     e.preventDefault();
     setConfirmList([...confirmList,...waitList]);
-    console.log(confirmList);
     setWaitList([]);
     let c = countwait;
     setCount(count => count + c);
@@ -40,15 +50,16 @@ function App() {
   return (
     
     <div className='main'>
+      <title>Invitation App</title>
       <h1 >Invitation App</h1>
       <form onSubmit={handleSubmit}>
         <input type='text' placeholder='Enter Name' value={name} onChange={e => setName(e.target.value)} className='inputs' required /> 
-        <input type='text' placeholder='Enter Phone Number' value={num} onChange={e => setNum(e.target.value)} className='inputs' required/>
+        <input type='text' placeholder='Enter Phone Number' pattern="[0-9]*" value={num} onChange={e => setNum(e.target.value)} className='inputs' required/>
         <select className='inputs' value={opt} onChange={e => setOpt(e.target.value)} required>
-          <option value="1">VVIP</option>
-          <option value="2">VIP</option>
-          <option value="3">Special</option>
-          <option value="4">General</option>
+          <option value="VVIP">VVIP</option>
+          <option value="VIP">VIP</option>
+          <option value="Special">Special</option>
+          <option value="General">General</option>
         </select>
         <button type='submit' className='inputs'>
           Add
@@ -58,11 +69,14 @@ function App() {
       <div>
       {waitList.length>0 ? 
         <div>
+       
         <h2>Wait List</h2>
-       {waitList.map((names,index) => 
+       {waitList.map((person,index) => 
           <div key={index} className="list1">
-              {names}
-              <input type="button" value="Delete" className="delete" onClick={() => handleDelete(index)} />
+              <div>{person.name} - {person.number} - {person.options}
+              <AiFillDelete size={30} onClick={() => handleDelete(index)} className='delete'/>
+              {/* <input type="button" value="Delete" className="delete" onClick={() => handleDelete(index)} /> */}
+              </div>
           </div>
           )}
           
@@ -81,11 +95,14 @@ function App() {
           {confirmList.length>0 ? 
             <div>
               <h2>Invited List {count}</h2>
-              {confirmList.map((names,index)=>(
+              {confirmList.map((person,index)=>(
                 <div className="list1">
-                  <li key={index}>
-                    {names}
-                  </li>
+                  <div key={index}>
+                  <div>{person.name} - {person.number} - {person.options}
+                  <AiFillDelete size={30} onClick={() => handleDelete2(index)} className='delete'/>
+                    {/* <input type="button" value="Delete" className="delete" onClick={() => handleDelete2(index)} /> */}
+                    </div>
+                  </div>
               </div>
               ))}
             </div>
@@ -97,11 +114,7 @@ function App() {
         </div>
       </div>
     )
-}
-
-  
-       
-  
+} 
 
 
 export default App;

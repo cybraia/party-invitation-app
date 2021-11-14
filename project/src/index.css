@@ -60,8 +60,8 @@ body {
 
 @media screen and (max-width: 900px) {
   .main{
-    width: 90%;
-    margin: 20px;
+    width: 95%;
+    margin: 10px;  
   }
   .inputs{
     margin: 3px;
