@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/party-invitation-app/static/css/main.bfd50bd6.chunk.css",
-    "main.js": "/party-invitation-app/static/js/main.7d5a6d94.chunk.js",
-    "main.js.map": "/party-invitation-app/static/js/main.7d5a6d94.chunk.js.map",
-    "runtime-main.js": "/party-invitation-app/static/js/runtime-main.6e96e323.js",
-    "runtime-main.js.map": "/party-invitation-app/static/js/runtime-main.6e96e323.js.map",
-    "static/js/2.d97e54ea.chunk.js": "/party-invitation-app/static/js/2.d97e54ea.chunk.js",
-    "static/js/2.d97e54ea.chunk.js.map": "/party-invitation-app/static/js/2.d97e54ea.chunk.js.map",
-    "static/js/3.9b7fe4e8.chunk.js": "/party-invitation-app/static/js/3.9b7fe4e8.chunk.js",
-    "static/js/3.9b7fe4e8.chunk.js.map": "/party-invitation-app/static/js/3.9b7fe4e8.chunk.js.map",
+    "main.css": "/party-invitation-app/static/css/main.946b5426.chunk.css",
+    "main.js": "/party-invitation-app/static/js/main.14ef95b9.chunk.js",
+    "main.js.map": "/party-invitation-app/static/js/main.14ef95b9.chunk.js.map",
+    "runtime-main.js": "/party-invitation-app/static/js/runtime-main.d9f05747.js",
+    "runtime-main.js.map": "/party-invitation-app/static/js/runtime-main.d9f05747.js.map",
+    "static/js/2.78a2589c.chunk.js": "/party-invitation-app/static/js/2.78a2589c.chunk.js",
+    "static/js/2.78a2589c.chunk.js.map": "/party-invitation-app/static/js/2.78a2589c.chunk.js.map",
+    "static/js/3.b2f12f42.chunk.js": "/party-invitation-app/static/js/3.b2f12f42.chunk.js",
+    "static/js/3.b2f12f42.chunk.js.map": "/party-invitation-app/static/js/3.b2f12f42.chunk.js.map",
     "index.html": "/party-invitation-app/index.html",
-    "static/css/main.bfd50bd6.chunk.css.map": "/party-invitation-app/static/css/main.bfd50bd6.chunk.css.map",
-    "static/js/2.d97e54ea.chunk.js.LICENSE.txt": "/party-invitation-app/static/js/2.d97e54ea.chunk.js.LICENSE.txt"
+    "static/css/main.946b5426.chunk.css.map": "/party-invitation-app/static/css/main.946b5426.chunk.css.map",
+    "static/js/2.78a2589c.chunk.js.LICENSE.txt": "/party-invitation-app/static/js/2.78a2589c.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.6e96e323.js",
-    "static/js/2.d97e54ea.chunk.js",
-    "static/css/main.bfd50bd6.chunk.css",
-    "static/js/main.7d5a6d94.chunk.js"
+    "static/js/runtime-main.d9f05747.js",
+    "static/js/2.78a2589c.chunk.js",
+    "static/css/main.946b5426.chunk.css",
+    "static/js/main.14ef95b9.chunk.js"
   ]
 }
