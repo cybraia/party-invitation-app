@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/party-invitation-app/static/css/main.946b5426.chunk.css",
-    "main.js": "/party-invitation-app/static/js/main.414f1f22.chunk.js",
-    "main.js.map": "/party-invitation-app/static/js/main.414f1f22.chunk.js.map",
+    "main.css": "/party-invitation-app/static/css/main.0adf70bf.chunk.css",
+    "main.js": "/party-invitation-app/static/js/main.01b67d88.chunk.js",
+    "main.js.map": "/party-invitation-app/static/js/main.01b67d88.chunk.js.map",
     "runtime-main.js": "/party-invitation-app/static/js/runtime-main.d9f05747.js",
     "runtime-main.js.map": "/party-invitation-app/static/js/runtime-main.d9f05747.js.map",
     "static/js/2.78a2589c.chunk.js": "/party-invitation-app/static/js/2.78a2589c.chunk.js",
@@ -10,13 +10,13 @@
     "static/js/3.b2f12f42.chunk.js": "/party-invitation-app/static/js/3.b2f12f42.chunk.js",
     "static/js/3.b2f12f42.chunk.js.map": "/party-invitation-app/static/js/3.b2f12f42.chunk.js.map",
     "index.html": "/party-invitation-app/index.html",
-    "static/css/main.946b5426.chunk.css.map": "/party-invitation-app/static/css/main.946b5426.chunk.css.map",
+    "static/css/main.0adf70bf.chunk.css.map": "/party-invitation-app/static/css/main.0adf70bf.chunk.css.map",
     "static/js/2.78a2589c.chunk.js.LICENSE.txt": "/party-invitation-app/static/js/2.78a2589c.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.d9f05747.js",
     "static/js/2.78a2589c.chunk.js",
-    "static/css/main.946b5426.chunk.css",
-    "static/js/main.414f1f22.chunk.js"
+    "static/css/main.0adf70bf.chunk.css",
+    "static/js/main.01b67d88.chunk.js"
   ]
 }
