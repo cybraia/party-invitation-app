@@ -1,6 +1,5 @@
 :root {
-  --primary-red: red;
-  --primary-bg: rgb(106, 179, 248);
+ 
   --bg-color: rgba(126, 126, 235, 0.452);
 
   --navbar-height: 80px;
@@ -18,26 +17,37 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--bg-color);
+    height: 120vh;
+    background: #03dfff;
+    background: linear-gradient(139deg,#03ddffcb 0%,#ff0381b6 90%);
+   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
 
+
 .main{
-  margin: 50px;
   text-align: center;
-  margin-top: 50px;
-  margin-left: 200px;
-  background-color: var(--primary-bg);
-  width: 70%;
   border-radius: 4px;
   display: inline-block;
+  background: linear-gradient(139deg,#ff0381b6 0%,#03ddffcb 90%);
+  position: relative;
+	max-width: 800px;
+	padding: 10px;
+  left: 25%;
+  top:100px;
+  border-radius: 4px;
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
   
 }
 
 .inputs{
+  color: black;
   padding: 8px;
   margin: 10px;
-  border-radius: 4px;
+  border:none;
+	border-bottom: 2px solid #666;
+  color: #333;
 }
+
 
 .list1{
   text-align: left;
@@ -45,11 +55,25 @@ body {
   padding-bottom: 13px;
 }
 
+.add{
+  margin: 0 10px;
+	background: #222;
+	color: #fff;
+	font-size: 15px;
+	text-transform: uppercase;
+	padding: 10px;
+	border: none;
+	outline: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
 .delete{
   float: right;
   display: inline;
   border-radius: 4px;
   margin-right: 30px;
+  color: #222
 }
 
 .addbtn{
@@ -59,9 +83,15 @@ body {
 }
 
 @media screen and (max-width: 900px) {
+  .body{
+    width: 100%;
+  }
   .main{
-    width: 95%;
-    margin: 10px;  
+    width: 80%;
+    background-color: #03dfff;
+    padding: 10px;
+    left: 7%;
+    top:100px;
   }
   .inputs{
     margin: 3px;

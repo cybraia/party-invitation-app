@@ -50,17 +50,18 @@ function App() {
   return (
     
     <div className='main'>
+
       <h1 >Invitation App</h1>
       <form onSubmit={handleSubmit}>
-        <input type='text' placeholder='Enter Name' value={name} onChange={e => setName(e.target.value)} className='inputs' required /> 
-        <input type='text' placeholder='Enter Phone Number' pattern="[0-9]*" value={num} onChange={e => setNum(e.target.value)} className='inputs' required/>
+        <input type='textvf' placeholder='Enter Name' value={name} onChange={e => setName(e.target.value)} className='inputs' required /> 
+        <input type='text' placeholder='Enter Phone Number' pattern="[1-9]{1}[0-9]{9}" value={num} onChange={e => setNum(e.target.value)} className='inputs' required/>
         <select className='inputs' value={opt} onChange={e => setOpt(e.target.value)} required>
           <option value="VVIP">VVIP</option>
           <option value="VIP">VIP</option>
           <option value="Special">Special</option>
           <option value="General">General</option>
         </select>
-        <button type='submit' className='inputs'>
+        <button type='submit' className='add'>
           Add
        </button>
       </form>
@@ -80,7 +81,7 @@ function App() {
           )}
           
           <form onSubmit={handleAdd}>
-            <input type="submit" value="Confirm Add" className="delete addbtn " />
+            <input type="submit" value="Confirm Add" className="add" />
           </form> 
           <br />
         </div>
@@ -116,4 +117,4 @@ function App() {
 } 
 
 
-export default App;
+export default App ;
