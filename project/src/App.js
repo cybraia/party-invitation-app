@@ -50,7 +50,6 @@ function App() {
   return (
     
     <div className='main'>
-      <title>Invitation App</title>
       <h1 >Invitation App</h1>
       <form onSubmit={handleSubmit}>
         <input type='text' placeholder='Enter Name' value={name} onChange={e => setName(e.target.value)} className='inputs' required /> 
