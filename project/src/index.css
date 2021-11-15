@@ -19,16 +19,17 @@ body {
   -moz-osx-font-smoothing: grayscale;
     height: 120vh;
     background: #03dfff;
-    background: linear-gradient(139deg,#03ddffcb 0%,#ff0381b6 90%);
+    background-color: black;
    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
 
 
 .main{
+  color: whitesmoke;
   text-align: center;
   border-radius: 4px;
   display: inline-block;
-  background: linear-gradient(139deg,#ff0381b6 0%,#03ddffcb 90%);
+  border-color: whitesmoke;
   position: relative;
 	max-width: 800px;
 	padding: 10px;
@@ -39,26 +40,38 @@ body {
   
 }
 
-.inputs{
-  color: black;
+.title{
+  color: lime;
+}
+
+.inputs {
   padding: 8px;
   margin: 10px;
+  background: none;
   border:none;
-	border-bottom: 2px solid #666;
+	border-bottom: 2px solid whitesmoke;
   color: #333;
 }
 
+.inputs ::placeholder{
+  color: azure;
+}
 
 .list1{
   text-align: left;
   margin-left: 30px;
+  margin-bottom: 10px;
+  padding: 10px;
   padding-bottom: 13px;
+  border-bottom: aliceblue;
+  color: white;
+  
 }
 
 .add{
   margin: 0 10px;
-	background: #222;
-	color: #fff;
+	background: lime;
+	color: black;
 	font-size: 15px;
 	text-transform: uppercase;
 	padding: 10px;
@@ -70,17 +83,12 @@ body {
 
 .delete{
   float: right;
-  display: inline;
-  border-radius: 4px;
-  margin-right: 30px;
+  position: relative;
+  display: inline-block;
+  padding-top: -10px;
   color: #222
 }
 
-.addbtn{
-  margin-top: -5px;
-  padding: 6px;
-  margin-bottom: 10px;
-}
 
 @media screen and (max-width: 900px) {
   .body{
