@@ -46,7 +46,7 @@ function App() {
     setCountwait(0);
   }
 
-  const handleEdit = (e,i) =>{
+  const handleEdit = () =>{
     // const list = [...waitList];
     // list[i].name = e.target.value;
     // setWaitList(list); 
@@ -58,7 +58,7 @@ function App() {
 
       <h1><span class="title">Invitation</span> App</h1>
       <form onSubmit={handleSubmit}>
-        <input type='textvf' placeholder='Enter Name' value={name} onChange={e => setName(e.target.value)} className='inputs' required /> 
+        <input type='text' placeholder='Enter Name' value={name} onChange={e => setName(e.target.value)} className='inputs' required /> 
         <input type='text' placeholder='Enter Phone Number' pattern="[1-9]{1}[0-9]{9}" value={num} onChange={e => setNum(e.target.value)} className='inputs' required/>
         <select className='inputs' value={opt} onChange={e => setOpt(e.target.value)} required>
           <option value="VVIP">VVIP</option>
@@ -79,7 +79,7 @@ function App() {
          {waitList.map((person,index) => 
             <div key={index} className="list1">
                 <div>{person.name} - {person.number} - {person.options}
-                <FaEdit size={28} color="lime" onClick={(e,i) => handleEdit(e,i)} className='delete'></FaEdit>
+                <FaEdit size={28} color="lime" onClick={(e,i) => handleEdit()} className='delete'></FaEdit>
                 <AiFillDelete size={30} color="red" onClick={() => handleDelete(index)} className='delete'/>
                 </div>
             </div>
