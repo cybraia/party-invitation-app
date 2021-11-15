@@ -2,15 +2,14 @@ import React from 'react';
 import { useState } from 'react';
 import './App.css';
 import {AiFillDelete} from 'react-icons/ai';
-
+import { FaEdit } from "react-icons/fa";
 
 
 function App() {
-
-  const [ waitList, setWaitList ] = useState([]);
   const [name, setName] = useState("");
   const [num, setNum] = useState("");
   const [opt, setOpt] = useState("");
+  const [ waitList, setWaitList ] = useState([]);
   const [confirmList, setConfirmList] = useState([]);
   const [count,setCount] = useState(0);
   const [countwait, setCountwait] = useState(0);
@@ -47,11 +46,17 @@ function App() {
     setCountwait(0);
   }
 
+  const handleEdit = (e,i) =>{
+    // const list = [...waitList];
+    // list[i].name = e.target.value;
+    // setWaitList(list); 
+  }
+
   return (
     
     <div className='main'>
 
-      <h1 >Invitation App</h1>
+      <h1><span class="title">Invitation</span> App</h1>
       <form onSubmit={handleSubmit}>
         <input type='textvf' placeholder='Enter Name' value={name} onChange={e => setName(e.target.value)} className='inputs' required /> 
         <input type='text' placeholder='Enter Phone Number' pattern="[1-9]{1}[0-9]{9}" value={num} onChange={e => setNum(e.target.value)} className='inputs' required/>
@@ -62,49 +67,62 @@ function App() {
           <option value="General">General</option>
         </select>
         <button type='submit' className='add'>
-          Add
+          +
        </button>
       </form>
 
-      <div>
-      {waitList.length>0 ? 
+      <div> 
+        {waitList.length>0
+        ?
         <div>
-       
         <h2>Wait List</h2>
-       {waitList.map((person,index) => 
-          <div key={index} className="list1">
-              <div>{person.name} - {person.number} - {person.options}
-              <AiFillDelete size={30} onClick={() => handleDelete(index)} className='delete'/>
-              {/* <input type="button" value="Delete" className="delete" onClick={() => handleDelete(index)} /> */}
-              </div>
+         {waitList.map((person,index) => 
+            <div key={index} className="list1">
+                <div>{person.name} - {person.number} - {person.options}
+                <FaEdit size={28} color="lime" onClick={(e,i) => handleEdit(e,i)} className='delete'></FaEdit>
+                <AiFillDelete size={30} color="red" onClick={() => handleDelete(index)} className='delete'/>
+                </div>
+            </div>
+            )}
+            <form onSubmit={handleAdd}>
+              <input type="submit" value="Confirm" className="add" />
+            </form> 
+            <br />
           </div>
-          )}
-          
-          <form onSubmit={handleAdd}>
-            <input type="submit" value="Confirm Add" className="add" />
-          </form> 
-          <br />
-        </div>
-      : 
+        :
         <div>
           <p>Add people to invite!</p>
-          <br />
         </div>}
       </div>
+      
         <div>
           {confirmList.length>0 ? 
             <div>
               <h2>Invited List {count}</h2>
-              {confirmList.map((person,index)=>(
-                <div className="list1">
+              
+                  <div>
+                  
+                    {/* <tr>
+                      <th>Name</th>
+                      <th>Number</th>
+                      <th>Status</th>
+                    </tr> */}
+                  {confirmList.map((person,index)=>(
+                  <div className="list1">
                   <div key={index}>
-                  <div>{person.name} - {person.number} - {person.options}
-                  <AiFillDelete size={30} onClick={() => handleDelete2(index)} className='delete'/>
-                    {/* <input type="button" value="Delete" className="delete" onClick={() => handleDelete2(index)} /> */}
-                    </div>
+                  {/* <table>
+                  <tr>
+                  <td>{person.name}</td>
+                  <td>{person.number}</td>
+                  <td>{person.options}</td> */}
+                  {person.name} - {person.number} - {person.options}
+                  <AiFillDelete size={30} color="red" onClick={() => handleDelete2(index)} className='delete'/>
+                  {/* </tr>
+                  </table> */}
                   </div>
+                  </div>
+                    ))}  
               </div>
-              ))}
             </div>
             :
             <div>
@@ -115,6 +133,5 @@ function App() {
       </div>
     )
 } 
-
 
 export default App ;

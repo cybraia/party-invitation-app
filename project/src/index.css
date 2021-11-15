@@ -83,7 +83,6 @@ body {
 
 .delete{
   float: right;
-  position: relative;
   display: inline-block;
   padding-top: -10px;
   color: #222
@@ -96,7 +95,6 @@ body {
   }
   .main{
     width: 80%;
-    background-color: #03dfff;
     padding: 10px;
     left: 7%;
     top:100px;
