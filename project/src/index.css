@@ -45,12 +45,12 @@ body {
 }
 
 .inputs {
+  color: white;
   padding: 8px;
   margin: 10px;
   background: none;
   border:none;
 	border-bottom: 2px solid whitesmoke;
-  color: #333;
 }
 
 .inputs ::placeholder{
